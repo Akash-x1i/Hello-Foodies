@@ -19,7 +19,7 @@ session_start();
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body class="fix-header fix-sidebar">
+< class="fix-header fix-sidebar">
   
     <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -27,30 +27,18 @@ session_start();
     </div>
    
     <div id="main-wrapper">
-       
          <div class="header">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
-            <div class="navbar-header">
+                <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
-                        
                         <span><img src="images/food-mania-logo.png" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
-           
                     <ul class="navbar-nav mr-auto mt-md-0">
-               
-                        
-                     
-                       
                     </ul>
-             
                     <ul class="navbar-nav my-lg-0">
-
-                       
-                    
                         <li class="nav-item dropdown">
-                           
                             <div class="dropdown-menu dropdown-menu-right mailbox animated zoomIn">
                                 <ul>
                                     <li>
@@ -94,153 +82,96 @@ session_start();
 								<li><a href="all_restaurant.php">All Restaurant</a></li>
 								<li><a href="add_category.php">Add Category</a></li>
                                 <li><a href="add_restaurant.php">Add Restaurant</a></li>
-                                
                             </ul>
                         </li>
                       <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery" aria-hidden="true"></i><span class="hide-menu">Menu</span></a>
                             <ul aria-expanded="false" class="collapse">
 								<li><a href="all_menu.php">All Menues</a></li>
 								<li><a href="add_menu.php">Add Menu</a></li>
-                              
-                                
                             </ul>
                         </li>
 						 <li> <a href="all_orders.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Orders</span></a></li>
-                         
                     </ul>
                 </nav>
-            
             </div>
-    
         </div>
-     
         <div class="page-wrapper">
-
-            
-        
             <div class="container-fluid">
-         
                 <div class="row">
                     <div class="col-12">
-                        
-                       
-                      
-                       
-						
-						
-                    <div class="col-lg-12">
-                        <div class="card card-outline-primary">
-                            <div class="card-header">
-                                <h4 class="m-b-0 text-white">All Restaurant</h4>
-                            </div>
-								
+                        <div class="col-lg-12">
+                            <div class="card card-outline-primary">
+                                <div class="card-header">
+                                    <h4 class="m-b-0 text-white">All Restaurant</h4>
+                                </div>
                                 <div class="table-responsive m-t-40">
                                     <table id="example23" class="display nowrap table table-hover table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                             <tr>
-											 <th>Category</th>
+                                            <th>Category</th>
                                                 <th>Restaurant-Name</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Url</th>
                                                 <th>Open Hrs</th>
                                                 <th>Close Hrs</th>
-												<th>Open Days</th>
-												  <th>Address</th>
-												  <th>Restaurant-Image</th>
-												  <th>Date</th>
-												   <th>Action</th>  
+                                                <th>Open Days</th>
+                                                <th>Address</th>
+                                                <th>Restaurant-Image</th>
+                                                <th>Date</th>
+                                                <th>Action</th>  
                                             </tr>
                                         </thead>
-                                        
                                         <tbody>
-										
-                                           
-                                               	<?php
-												$sql="SELECT * FROM restaurant order by rs_id desc";
-												$query=mysqli_query($db,$sql);
-												
-													if(!mysqli_num_rows($query) > 0 )
-														{
-															echo '<td colspan="11"><center>No Restaurants</center></td>';
-														}
-													else
-														{				
-																	while($rows=mysqli_fetch_array($query))
-																		{
-																					
-																				$mql="SELECT * FROM res_category where c_id='".$rows['c_id']."'";
-																					$res=mysqli_query($db,$mql);
-																					$row=mysqli_fetch_array($res);
-																				
-																					echo ' <tr><td>'.$row['c_name'].'</td>
-																								<td>'.$rows['title'].'</td>
-																								<td>'.$rows['email'].'</td>
-																								<td>'.$rows['phone'].'</td>
-																								<td>'.$rows['url'].'</td>
-																								
-																								
-																								<td>'.$rows['o_hr'].'</td>
-																								<td>'.$rows['c_hr'].'</td>
-																								<td>'.$rows['o_days'].'</td>
-																								
-																								<td>'.$rows['address'].'</td>
-																								
-																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/'.$rows['image'].'" class="img-responsive radius"  style="min-width:150px;min-height:100px;"/></center>
-																								</div></td>
-																								
-																								<td>'.$rows['date'].'</td>
-																									 <td><a href="delete_restaurant.php?res_del='.$rows['rs_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_restaurant.php?res_upd='.$rows['rs_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
-																									</td></tr>';
-																					 
-																						
-																						
-																		}	
-														}
-												
-											
-											?>
-                                            
-                                           
-                                 
-                                                        
-                                                            
-                                                           
+                                            <?php
+                                                $sql="SELECT * FROM restaurant where order by rs_id desc";
+                                                $query=mysqli_query($db,$sql);
+                                                
+                                                if(!mysqli_num_rows($query) > 0 )
+                                                    {
+                                                        echo '<td colspan="11"><center>No Restaurants</center></td>';
+                                                    }
+                                                else{				
+                                                    while($rows=mysqli_fetch_array($query)){ 
+                                                        $mql="SELECT * FROM res_category where c_id='".$rows['c_id']."'";
+                                                        $res=mysqli_query($db,$mql);
+                                                        $row=mysqli_fetch_array($res);
+                                                    
+                                                        echo ' <tr>
+                                                            <td>'.$row['c_name'].'</td>
+                                                            <td>'.$rows['title'].'</td>
+                                                            <td>'.$rows['email'].'</td>
+                                                            <td>'.$rows['phone'].'</td>
+                                                            <td>'.$rows['url'].'</td>
+                                                            <td>'.$rows['o_hr'].'</td>
+                                                            <td>'.$rows['c_hr'].'</td>
+                                                            <td>'.$rows['o_days'].'</td>
+                                                            <td>'.$rows['address'].'</td>
+
+                                                            <td><div class="col-md-3 col-lg-8 m-b-10">
+                                                            <center><img src="Res_img/'.$rows['image'].'" class="img-responsive radius"  style="min-width:150px;min-height:100px;"/></center>
+                                                            </div></td>
+
+                                                            <td>'.$rows['date'].'</td>
+                                                            <td>
+                                                                <a href="delete_restaurant.php?res_del='.$rows['rs_id'].'" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
+                                                                <a href="update_restaurant.php?res_upd='.$rows['rs_id'].'" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="ti-settings"></i></a>
+                                                            </td>
+                                                        </tr>';
+                                                    }	
+                                                }
+                                            ?>            
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                        </div>
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						
-						 </div>
-                      
-                            </div>
-                        </div>
+                        </div>  
                     </div>
                 </div>
-            
             </div>
-         
-            <footer class="footer"> © 2021 All rights reserved. </footer>
-     
+        </div>
+    </div>
+    <footer class="footer"> © 2021 All rights reserved. </footer>
         </div>
 
     </div>
