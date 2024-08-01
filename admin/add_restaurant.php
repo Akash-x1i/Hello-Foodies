@@ -210,32 +210,12 @@ if (isset($_POST['submit'])) {
                                                 <input type="text" name="res_name" class="form-control">
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group has-danger">
-                                                <label class="control-label">Bussiness E-mail</label>
-                                                <input type="text" name="email"
-                                                    class="form-control form-control-danger">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row p-t-20">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Phone </label>
                                                 <input type="text" name="phone" class="form-control">
                                             </div>
                                         </div>
-
-                                        <div class="col-md-6">
-                                            <div class="form-group has-danger">
-                                                <label class="control-label">Website URL</label>
-                                                <input type="text" name="url" class="form-control form-control-danger">
-                                            </div>
-                                        </div>
-
                                     </div>
 
                                     <div class="row">
