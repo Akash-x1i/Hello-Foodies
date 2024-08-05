@@ -36,11 +36,26 @@ CREATE TABLE `admin` (
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `admin`
+-- Table structure for table `masterAdmin`
 --
 
-INSERT INTO `admin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) VALUES
+CREATE TABLE `masterAdmin` (
+  `adm_id` int(222) NOT NULL,
+  `username` varchar(222) NOT NULL,
+  `password` varchar(222) NOT NULL,
+  `email` varchar(222) NOT NULL,
+  `code` varchar(222) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `masterAdmin`
+--
+
+INSERT INTO `masterAdmin` (`adm_id`, `username`, `password`, `email`, `code`, `date`) VALUES
 (1, 'admin', '0192023a7bbd73250516f069df18b500', 'admin@gmail.com', '', '2021-04-07 08:40:28');
 
 -- --------------------------------------------------------
@@ -103,6 +118,7 @@ CREATE TABLE `remark` (
 CREATE TABLE `restaurant` (
   `rs_id` int(222) NOT NULL,
   `c_id` int(222) NOT NULL,
+  `adm_id` int(222) NOT NULL,
   `title` varchar(222) NOT NULL,
   `email` varchar(222) NOT NULL,
   `phone` varchar(222) NOT NULL,
@@ -119,11 +135,11 @@ CREATE TABLE `restaurant` (
 -- Dumping data for table `restaurant`
 --
 
-INSERT INTO `restaurant` (`rs_id`, `c_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
-(1, 1, 'Gazebo', 'gazebo@gmail.com', '4312533432', 'www.gazebo.com', '12pm', '12am', 'Mon-Sat', 'Borivali', '606d71a81ec5d.jpg', '2021-04-07 09:18:19'),
-(2, 2, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '11am', '9pm', 'Mon-Sat', 'Goregaon', '606d720b5fc71.jpg', '2021-04-07 08:49:15'),
-(3, 3, 'Mainland China', 'mainland@china.com', '4326538776', 'www.mainlandchina.com', '8am', '9pm', 'Mon-Fri', 'Malad', '606d72653306f.jpg', '2021-04-07 08:50:45'),
-(4, 4, 'TGI Fridays', 'tgi@gmail.com', '2342353325', 'www.tgif.com', '9am', '9pm', 'Mon-Sat', 'Lower Parel', '606d72a49503a.jpg', '2021-04-07 08:51:48');
+INSERT INTO `restaurant` (`rs_id`, `c_id`, `adm_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
+(1, 1, 1, 'Gazebo', 'gazebo@gmail.com', '4312533432', 'www.gazebo.com', '12pm', '12am', 'Mon-Sat', 'Borivali', '606d71a81ec5d.jpg', '2021-04-07 09:18:19'),
+(2, 2, 1, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '11am', '9pm', 'Mon-Sat', 'Goregaon', '606d720b5fc71.jpg', '2021-04-07 08:49:15'),
+(3, 3, 1, 'Mainland China', 'mainland@china.com', '4326538776', 'www.mainlandchina.com', '8am', '9pm', 'Mon-Fri', 'Malad', '606d72653306f.jpg', '2021-04-07 08:50:45'),
+(4, 4, 1, 'TGI Fridays', 'tgi@gmail.com', '2342353325', 'www.tgif.com', '9am', '9pm', 'Mon-Sat', 'Lower Parel', '606d72a49503a.jpg', '2021-04-07 08:51:48');
 
 -- --------------------------------------------------------
 
@@ -184,12 +200,32 @@ INSERT INTO `users` (`u_id`, `username`, `f_name`, `l_name`, `email`, `phone`, `
 CREATE TABLE `users_orders` (
   `o_id` int(222) NOT NULL,
   `u_id` int(222) NOT NULL,
+  `rs_id` int(222) NOT NULL,
   `title` varchar(222) NOT NULL,
   `quantity` int(222) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `status` varchar(222) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+-- 
+-- Table structure for Dish Category
+--
+
+CREATE TABLE dish_cat (
+  dcat_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `d_id` int(222) NOT NULL,
+  `c_id` int(222) NOT NULL,
+  category VARCHAR(50) NOT NULL,
+  -- FOREIGN KEY (d_id) REFERENCES dishes(d_id),
+  -- FOREIGN KEY (c_id) REFERENCES res_category(c_id)
+) ENGINE=InnoDB;
+
+
+
+-- --------------------------------------------------------
 
 --
 -- Indexes for dumped tables
