@@ -44,7 +44,7 @@ else
                                     <span><i class="fa fa-cutlery f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from dishes";
+                                    <h2><?php $sql="select * from dishes where rs_id =".$_SESSION['adm_id'];
 												$result=mysqli_query($db,$sql); 
 													$rws=mysqli_num_rows($result);
 													
@@ -63,7 +63,7 @@ else
                                     <span><i class="fa fa-shopping-cart f-s-40" aria-hidden="true"></i></span>
                                 </div>
                                 <div class="media-body media-text-right">
-                                    <h2><?php $sql="select * from users_orders";
+                                    <h2><?php $sql="select * from users_orders where rs_id =".$_SESSION['adm_id'];
 												$result=mysqli_query($db,$sql); 
 													$rws=mysqli_num_rows($result);
 													
