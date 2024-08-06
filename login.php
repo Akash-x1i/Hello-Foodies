@@ -1,3 +1,34 @@
+
+<?php
+include("connection/connect.php"); 
+error_reporting(0); 
+session_start(); 
+if(isset($_POST['submit']))  
+{
+    $username = $_POST['username'];  
+    $password = $_POST['password'];
+    
+    if(!empty($_POST["submit"]))   
+    {
+        $loginquery = "SELECT * FROM users WHERE username='$username' && password='" . md5($password) . "'";
+        $result=mysqli_query($db, $loginquery); //executing
+        $row=mysqli_fetch_array($result);
+    
+        if(is_array($row)) 
+        {
+            $_SESSION["u_id"] = $row['u_id'];
+            header("refresh:1;url=index.php"); 
+        } 
+        else
+        {
+            $message = "Invalid Username or Password!"; 
+        }
+     }
+    
+    
+}
+?>
+  
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -34,15 +65,16 @@
             <nav class="navbar navbar-dark">
                 <div class="container">
                     <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">&#9776;</button>
-                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-mania-logo.png" alt=""> </a>
+                    <a class="navbar-brand" href="index.php"> <img class="img-rounded" src="images/food-mania-logo.png"  height="50px" alt=""> </a>
                     <div class="collapse navbar-toggleable-md  float-lg-right" id="mainNavbarCollapse">
                        <ul class="nav navbar-nav">
                             <li class="nav-item"> <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a> </li>
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                             
 							<?php
-						if(empty($_SESSION["user_id"]))
+                            if (empty($row["u_id"]))
 							{
+                                echo $row["u_id"];
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
 							}
@@ -62,37 +94,6 @@
             </nav>
         </header>
 <div style=" background-image: url('images/img/background_login.jpg');">
-
-<?php
-include("connection/connect.php"); 
-error_reporting(0); 
-session_start(); 
-if(isset($_POST['submit']))  
-{
-	$username = $_POST['username'];  
-	$password = $_POST['password'];
-	
-	if(!empty($_POST["submit"]))   
-     {
-	$loginquery ="SELECT * FROM users WHERE username='$username' && password='".md5($password)."'"; //selecting matching records
-	$result=mysqli_query($db, $loginquery); //executing
-	$row=mysqli_fetch_array($result);
-	
-	                        if(is_array($row)) 
-								{
-                                    	$_SESSION["user_id"] = $row['u_id']; 
-										 header("refresh:1;url=index.php"); 
-	                            } 
-							else
-							    {
-                                      	$message = "Invalid Username or Password!"; 
-                                }
-	 }
-	
-	
-}
-?>
-  
 
 <div class="pen-title">
   <

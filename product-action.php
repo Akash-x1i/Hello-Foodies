@@ -57,7 +57,7 @@ switch($_GET["action"])
 			break;
 			
 	case "check":
-			header("location:checkout.php");
+			header("location:checkout.php?res_id=".$_GET['res_id']);
 			break;
 	}
 }
