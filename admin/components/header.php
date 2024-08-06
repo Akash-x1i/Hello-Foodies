@@ -8,7 +8,7 @@
         <nav class="navbar navbar-dark">
             <div class="container">
                 <button class="navbar-toggler hidden-lg-up fa fa-bars" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse"></button>
-                <div style="margin-inline: auto;"><a class="navbar-brand" href="dashboard.php"> <img class="bg-light" src="images/food-mania-logo.png" height="50px" alt=""> </a></div>
+                <div style="margin-inline: auto;"><a class="navbar-brand" href="dashboard.php"> <img class="bg-light" src="images/hello-foodies-logo.png" height="50px" alt=""> </a></div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/bookingSystem/3.png" alt="user" class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right animated zoomIn">

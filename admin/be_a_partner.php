@@ -168,7 +168,7 @@ if (isset($_POST['submit'])) {
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="dashboard.php">
-                        <span><img src="images/food-mania-logo.png" alt="homepage" class="dark-logo" /></span>
+                        <span><img src="images/hello-foodies-logo.png"  height="45px" alt="homepage" class="dark-logo" /></span>
                     </a>
                 </div>
                 <div class="navbar-collapse">
