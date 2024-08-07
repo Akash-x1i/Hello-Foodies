@@ -61,7 +61,10 @@ if (empty($_SESSION["adm_id"])) {
                                            
 											
 											<?php
-												$sql="SELECT users.*, users_orders.* FROM users INNER JOIN users_orders ON users.u_id=users_orders.u_id ";
+												$sql = "SELECT users.*, users_orders.*
+												FROM users
+												INNER JOIN users_orders ON users.u_id = users_orders.u_id
+												WHERE users_orders.rs_id = " . $_SESSION['adm_id'];
 												$query=mysqli_query($db,$sql);
 												
 													if(!mysqli_num_rows($query) > 0 )
