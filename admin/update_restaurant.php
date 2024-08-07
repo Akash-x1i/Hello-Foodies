@@ -173,12 +173,14 @@ if(isset($_POST['submit']))
                                                     <label class="control-label">Open Hours</label>
                                                     <select name="o_hr" id="o_hr" class="form-control custom-select"  data-placeholder="Choose a Category" >
                                                      <option>--Select your Hours--</option>
-                                                        <option value="6am">6am</option>
-                                                        <option value="7am">7am</option> 
-														<option value="8am">8am</option>
-														<option value="9am">9am</option>
-														<option value="10am">10am</option>
-														<option value="11am">11am</option>
+                                                     <option>--Select your Hours--</option>
+                                                            <option value="6am">6am</option>
+                                                            <option value="7am">7am</option>
+                                                            <option value="8am">8am</option>
+                                                            <option value="9am">9am</option>
+                                                            <option value="10am">10am</option>
+                                                            <option value="11am">11am</option>
+                                                            <option value="12pm">12pm</option>
                                                     </select>
                                                 </div>
                                             </div>
