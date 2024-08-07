@@ -48,7 +48,7 @@ if (empty($_SESSION["adm_id"])) {
 
                         $res_name = $_POST['res_name'];
 
-                        $sql = "INSERT INTO restaurant(c_id,adm_id,title,email,phone,url,o_hr,c_hr,o_days,address,image) VALUE('" . $_POST['c_name'] . "', '" . $_SESSION['adm_id'] . "','" . $res_name . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['url'] . "','" . $_POST['o_hr'] . "','" . $_POST['c_hr'] . "','" . $_POST['o_days'] . "','" . $_POST['address'] . "','" . $fnew . "')";  // store the submited data ino the database :images
+                        $sql = "INSERT INTO restaurant(rs_id,c_id,adm_id,title,email,phone,url,o_hr,c_hr,o_days,address,image) VALUE('". $_SESSION['adm_id'] . $_POST['c_name'] . "', '" . $_SESSION['adm_id'] . "','" . $res_name . "','" . $_POST['email'] . "','" . $_POST['phone'] . "','" . $_POST['url'] . "','" . $_POST['o_hr'] . "','" . $_POST['c_hr'] . "','" . $_POST['o_days'] . "','" . $_POST['address'] . "','" . $fnew . "')";  // store the submited data ino the database :images
                         mysqli_query($db, $sql);
                         move_uploaded_file($temp, $store);
 

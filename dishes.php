@@ -37,7 +37,7 @@ include_once 'product-action.php';
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                             
 							<?php
-						if(empty($_SESSION["user_id"]))
+						if(empty($_SESSION["u_id"]))
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';

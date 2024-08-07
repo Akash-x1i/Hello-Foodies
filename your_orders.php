@@ -5,7 +5,7 @@ include("connection/connect.php");
 error_reporting(0);
 session_start();
 
-if(empty($_SESSION['user_id']))  
+if(empty($_SESSION['u_id']))  
 {
 	header('location:login.php');
 }
@@ -165,7 +165,7 @@ only screen and (max-width: 760px),
                             <li class="nav-item"> <a class="nav-link active" href="restaurants.php">Restaurants <span class="sr-only"></span></a> </li>
                             
 							<?php
-						if(empty($_SESSION["user_id"]))
+						if(empty($_SESSION["u_id"]))
 							{
 								echo '<li class="nav-item"><a href="login.php" class="nav-link active">Login</a> </li>
 							  <li class="nav-item"><a href="registration.php" class="nav-link active">Signup</a> </li>';
@@ -230,7 +230,7 @@ only screen and (max-width: 760px),
 						  
 							<?php 
 				
-						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['user_id']."'");
+						$query_res= mysqli_query($db,"select * from users_orders where u_id='".$_SESSION['u_id']."'");
 												if(!mysqli_num_rows($query_res) > 0 )
 														{
 															echo '<td colspan="6"><center>You have No orders Placed yet. </center></td>';

@@ -36,6 +36,18 @@ CREATE TABLE `admin` (
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`username`, `password`, `email`, `code`, `date` ) VALUES
+('admin1', '0192023a7bbd73250516f069df18b500', 'admin1@gmail.com', '', '2024-04-07 02:40:28'),
+('admin2', '0192023a7bbd73250516f069df18b500', 'admin2@gmail.com', '', '2024-04-07 02:40:28'),
+('admin3', '0192023a7bbd73250516f069df18b500', 'admin3@gmail.com', '', '2024-04-07 02:40:28'),
+('admin4', '0192023a7bbd73250516f069df18b500', 'admin4@gmail.com', '', '2024-04-07 02:40:28')
+;
+
 -- --------------------------------------------------------
 
 --
@@ -56,7 +68,7 @@ CREATE TABLE `masterAdmin` (
 --
 
 INSERT INTO `masterAdmin` (`username`, `password`, `email`, `code`, `date`) VALUES
-('admin', '0192023a7bbd73250516f069df18b500', 'admin@gmail.com', '', '2021-04-07 08:40:28');
+('admin', '0192023a7bbd73250516f069df18b500', 'admin@gmail.com', '', '2024-04-07 02:40:28');
 
 -- --------------------------------------------------------
 
@@ -116,7 +128,7 @@ CREATE TABLE `remark` (
 --
 
 CREATE TABLE `restaurant` (
-  `rs_id` int(222) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `rs_id` int(222) NOT NULL,
   `c_id` int(222) NOT NULL,
   `adm_id` int(222) NOT NULL,
   `title` varchar(222) NOT NULL,
@@ -135,11 +147,11 @@ CREATE TABLE `restaurant` (
 -- Dumping data for table `restaurant`
 --
 
-INSERT INTO `restaurant` ( `c_id`, `adm_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
-(1, 1, 'Gazebo', 'gazebo@gmail.com', '4312533432', 'www.gazebo.com', '12pm', '12am', 'Mon-Sat', 'Borivali', '606d71a81ec5d.jpg', '2021-04-07 09:18:19'),
-(2, 2, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '11am', '9pm', 'Mon-Sat', 'Goregaon', '606d720b5fc71.jpg', '2021-04-07 08:49:15'),
-(3, 3, 'Mainland China', 'mainland@china.com', '4326538776', 'www.mainlandchina.com', '8am', '9pm', 'Mon-Fri', 'Malad', '606d72653306f.jpg', '2021-04-07 08:50:45'),
-(4, 4, 'TGI Fridays', 'tgi@gmail.com', '2342353325', 'www.tgif.com', '9am', '9pm', 'Mon-Sat', 'Lower Parel', '606d72a49503a.jpg', '2021-04-07 08:51:48');
+INSERT INTO `restaurant` (`rs_id`, `c_id`, `adm_id`, `title`, `email`, `phone`, `url`, `o_hr`, `c_hr`, `o_days`, `address`, `image`, `date`) VALUES
+(1, 1, 1, 'Gazebo', 'gazebo@gmail.com', '4312533432', 'www.gazebo.com', '12pm', '12am', 'Mon-Sat', 'Borivali', '606d71a81ec5d.jpg', '2021-04-07 09:18:19'),
+(2, 2, 2, 'Eataly', 'eataly@gmail.com', '0557426406', 'www.eataly.com', '11am', '9pm', 'Mon-Sat', 'Goregaon', '606d720b5fc71.jpg', '2021-04-07 08:49:15'),
+(3, 3, 3, 'Mainland China', 'mainland@china.com', '4326538776', 'www.mainlandchina.com', '8am', '9pm', 'Mon-Fri', 'Malad', '606d72653306f.jpg', '2021-04-07 08:50:45'),
+(4, 4, 4, 'TGI Fridays', 'tgi@gmail.com', '2342353325', 'www.tgif.com', '9am', '9pm', 'Mon-Sat', 'Lower Parel', '606d72a49503a.jpg', '2021-04-07 08:51:48');
 
 -- --------------------------------------------------------
 
