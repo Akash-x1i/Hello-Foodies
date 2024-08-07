@@ -159,7 +159,7 @@ if(isset($_POST['submit']))
                             <h5>Phone: +91 8093424562</a></h5> </div>
                         <div class="col-xs-12 col-sm-5 additional-info color-gray">
                             <h5>Addition informations</h5>
-                           <p>Join thousands of other restaurants who benefit from having partnered with us.</p>
+                           <a href="./admin/be_a_partner.php"> <p>Join thousands of other restaurants who benefit from having partnered with us.</p></a>
                         </div>
                     </div>
                 </div>
