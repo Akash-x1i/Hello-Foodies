@@ -281,11 +281,12 @@ $item_total += ($item["price"]*$item["quantity"]);
                                 </div>
                                 <div class="col-xs-12 col-sm-4 address color-gray">
                                     <h5>Address</h5>
-                                    <p>213, Raheja Chambers, Free Press Journal Road, Nariman Point, Mumbai, Maharashtra 400021, India</p>
-                                    <h5>Phone: +91 8093424562</a></h5> </div>
+                                    <p>123, SDF Building, Salt Lake, Sector V, Kolkata, West Bengal, India</p>
+                                    <h5>Phone: <a href="tel:8918527786">8918527786</a></a></h5> </div>
                                 <div class="col-xs-12 col-sm-5 additional-info color-gray">
                                     <h5>Addition informations</h5>
-                                   <p>Join thousands of other restaurants who benefit from having partnered with us.</p>
+                                    <a href="./admin/be_a_partner.php"> <p>Join thousands of other restaurants who benefit from having partnered with us.</p></a>
+
                                 </div>
                             </div>
                         </div>
