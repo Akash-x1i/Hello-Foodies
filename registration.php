@@ -131,7 +131,7 @@ if(isset($_POST['submit'] ))
 							  <form action="" method="post">
                                  <div class="row">
 								  <div class="form-group col-sm-12">
-                                       <label for="exampleInputEmail1">User-Name</label>
+                                       <label for="exampleInputEmail1">Username</label>
                                        <input class="form-control" type="text" name="username" id="example-text-input"> 
                                     </div>
                                     <div class="form-group col-sm-6">
@@ -171,7 +171,8 @@ if(isset($_POST['submit'] ))
                                     </div>
                                  </div>
                               </form>
-                  
+                              <div class="cta">Restaurant Owner?<a href="admin/be_a_partner.php" style="color:#f30;">Partner with Us</a></div>
+
 						   </div>
            
                         </div>

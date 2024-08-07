@@ -115,6 +115,7 @@ if(isset($_POST['submit']))
   </div>
   
   <div class="cta">Not registered?<a href="registration.php" style="color:#f30;"> Create an account</a></div>
+  <div class="cta">Restaurant Owner?<a href="admin/index.php" style="color:#f30;">Login Here</a></div>
 </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
